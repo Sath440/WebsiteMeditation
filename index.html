@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cambria', serif;
+            background-color: gray;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        .search-input {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+        .search-button {
+            padding: 10px 20px;
+            background-color: #007bff00;
+            color: black;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .search-results {
+            margin-top: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar creation -->
+    <nav class="navbar navbar-expand-lg bg-transparent" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-4" href="#">Resources</a>
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="sidebar offcanvas offcanvas-start bg-transparent" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header text-white boarder-bottom">
+                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body d-flex">
+                    <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="mindfullness.html">Meditation</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="books.html">Books</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="breathing_techniques.html">Breathing Techniques</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="yoga.html">Yoga</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Top heading -->
+    <section class="bg-dark text-light p-4 text-center">
+        <div class="container">
+            <div>
+                <h1>Welcome to the Home Page!</h1>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button class="search-button" onclick="searchResources()">Search</button>
+                </div>
+                <div class="search-results"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project boxes -->
+    <section class="p-5">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card bg-dark">
+                        <div class="card-body text-center text-white">
+                            <h2 class="card-header mb-3">Meditation</h2>
+                            <p class="card-text text-white">
+                                Meditation is a practice where an individual uses a technique - such as mindfulness, or focusing the mind on a particular object, thought, or activity - to train attention and awareness, and achieve a mentally clear and emotionally calm and stable state.
+                            </p>
+                            <a href="mindfullness.html" class="btn btn-dark">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="card bg-dark">
+                        <div class="card-body text-center text-white">
+                            <h2 class="card-header mb-3">Books</h2>
+                            <p class="card-text text-white">
+                                Books on general wellness encompass a wide range of topics aimed at enhancing one's health and well being across multiple dimensions. These books provide insights to help individuals improve their quality of life, manage stress, cultivate a positive mindset, maintain physical health, and achieve personal growth.
+                            </p>
+                            <a href="books.html" class="btn btn-dark">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more project boxes as needed -->
+                <div class="col-md">
+                    <div class="card bg-dark">
+                        <div class="card-body text-center text-white">
+                            <h2 class="card-header mb-3">Breathing Techniques</h2>
+                            <p class="card-text text-white">
+                                Breathing techniques, also known as pranayama in the context of yoga, are systematic methods of controlling your breathing pattern for health relaxation, and mental clarity. These techniques can vary greatly in practice, ranging from simple exercises that focus on deep and slow breathing to more advanced methods involving specific patterns and rhythms of inhalation, retention, and exhalation.
+                            </p>
+                            <a href="breathing_techniques.html" class="btn btn-dark">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="card bg-dark">
+                        <div class="card-body text-center text-white">
+                            <h2 class="card-header mb-3">Yoga</h2>
+                            <p class="card-text text-white">
+                                Yoga is a comprehensive practice that combines physical postures, breathing techniques, meditation, and ethical precepts. Originating in ancient India, it is designed to improve physical health, promote mental clarity, and foster spiritual growth. The practice of yoga encompasses a wide range of styles and disciplines, each with its unique focus and techniques but all sharing the common goal of harmonizing the body, mind, and spirit.
+                            </p>
+                            <a href="yoga.html" class="btn btn-dark">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Script for the search engine -->
+    <script>
+        function searchResources() {
+            var searchQuery = document.querySelector('.search-input').value.toLowerCase();
+            var searchResults = document.querySelector('.search-results');
+            searchResults.innerHTML = '';
+        
+            var resources = [];
+        
+            // Retrieve resources from local storage for each page
+            var meditationResources = localStorage.getItem('medResources');
+            if (meditationResources) {
+                resources = resources.concat(JSON.parse(meditationResources));
+            }
+        
+            var booksResources = localStorage.getItem('booksResources');
+            if (booksResources) {
+                resources = resources.concat(JSON.parse(booksResources));
+            }
+        
+            var breathingResources = localStorage.getItem('breathingResources');
+            if (breathingResources) {
+                resources = resources.concat(JSON.parse(breathingResources));
+            }
+        
+            var yogaResources = localStorage.getItem('yogaResources');
+            if (yogaResources) {
+                resources = resources.concat(JSON.parse(yogaResources));
+            }
+        
+            var matchingResources = resources.filter(function (resource) {
+                return resource.title.toLowerCase().includes(searchQuery);
+            });
+        
+            if (matchingResources.length > 0) {
+                var resultList = document.createElement('ul');
+                matchingResources.forEach(function (resource) {
+                    var listItem = document.createElement('li');
+                    var link = document.createElement('a');
+                    link.href = resource.url;
+                    link.textContent = resource.title;
+                    listItem.appendChild(link);
+                    resultList.appendChild(listItem);
+                });
+                searchResults.appendChild(resultList);
+            } else {
+                searchResults.textContent = 'No matching resources found';
+            }
+        }
+    </script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
